@@ -1,16 +1,30 @@
 <nav>
   <div class="nav-wrapper #212121 grey darken-4">
-    <a href="/" class="brand-logo">WOM</a>
+    <a href="/" class="brand-logo left"><i class="material-icons right">fitness_center</i></a>
+    <a href="/" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <%if(currentUser){%>
-      <li><a href="/profile/addworkout">Add workout</a></li>
-      <li><a href="/profile">Profile</a></li>
-      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/profile/addworkout"><i class="material-icons right">playlist_add</i></a></li>
+      <li><a href="/profile"><i class="material-icons right">person_outline</i></a></li>
+      <li><a href="/auth/logout"><i class="material-icons right">lock_outline</i></a></li>
       <% } else {%>
-      <li><a href="/">Home</a></li>
+      <li><a href="/"><i class="material-icons right">home</i></a></li>
       <li><a href="/auth/login">Login</a></li>
       <li><a href="/auth/signup">Signup</a></li>
       <%}%>
       </ul>
   </div>
 </nav>
+
+<ul class="sidenav" id="mobile">
+  <a href="/" class="brand-logo sidenav-trigger left"><i class="material-icons right">fitness_center</i></a>
+  <%if(currentUser){%>
+  <li><a href="/profile/addworkout"><i class="material-icons right">playlist_add</i></a></li>
+  <li><a href="/profile"><i class="material-icons right">person_outline</i></a></li>
+  <li><a href="/auth/logout"><i class="material-icons right">lock_outline</i></a></li>
+  <% } else {%>
+  <li><a href="/"><i class="material-icons right">home</i></a></li>
+  <li><a href="/auth/login">Login</a></li>
+  <li><a href="/auth/signup">Signup</a></li>
+  <%}%>
+</ul>

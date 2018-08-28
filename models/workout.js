@@ -5,10 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     reps: DataTypes.INTEGER,
     sets: DataTypes.INTEGER,
     date: DataTypes.DATE,
-    weight: DataTypes.INTEGER
+    weight: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {});
   workout.associate = function(models) {
-    // associations can be defined here
+    models.workout.belongsTo(models.user)
   };
   return workout;
 };
