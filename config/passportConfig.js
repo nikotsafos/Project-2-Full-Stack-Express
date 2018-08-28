@@ -74,7 +74,6 @@ passport.use(new passportFacebookStrategy({
           email: facebookEmail,
           firstname: usernameArr[0],
           lastname: usernameArr[usernameArr.length - 1],
-          admin: false,
           image: 'https://graph.facebook.com/' + profile.id + '/picture?type=square',
           dob: profile.birthday
         }

@@ -1,8 +1,8 @@
 {
-  "name": "auth-boiler",
+  "name": "Project-2-Full-Stack-Express",
   "version": "1.0.0",
-  "description": "Boilerplate for future use",
-  "repository": "https://github.com/nikotsafos/auth-boiler",
+  "description": "workout",
+  "repository": "https://github.com/nikotsafos/Project-2-Full-Stack-Express.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

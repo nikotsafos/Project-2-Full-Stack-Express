@@ -23,9 +23,6 @@ module.exports = {
       dob: {
         type: Sequelize.DATE
       },
-      admin: {
-        type: Sequelize.BOOLEAN
-      },
       image: {
         type: Sequelize.STRING
       },
