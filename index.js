@@ -8,6 +8,7 @@ var express = require('express');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
 var flash = require('connect-flash');
+var moment = require('moment');
 
 // declare app variable
 var app = express();
@@ -29,6 +30,7 @@ app.use(passport.session());
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
   res.locals.alerts = req.flash();
+  res.locals.moment = moment;
   next();
 });
 

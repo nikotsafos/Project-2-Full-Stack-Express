@@ -12,4 +12,12 @@ router.get('/', loggedIn, function(req, res){
   res.render('profile/index');
 });
 
+router.get('/addworkout', loggedIn, function(req, res){
+  res.render('profile/addworkout');
+});
+
+router.get('/edit', loggedIn, function(req, res){
+  res.render('profile/edit');
+});
+
 module.exports = router;

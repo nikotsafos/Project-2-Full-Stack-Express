@@ -23,7 +23,19 @@ module.exports = {
       dob: {
         type: Sequelize.DATE
       },
+      weight: {
+        type: Sequelize.INTEGER
+      },
+      height: {
+        type: Sequelize.INTEGER
+      },
       image: {
+        type: Sequelize.STRING
+      },
+      facebookId: {
+        type: Sequelize.STRING
+      },
+      facebookToken: {
         type: Sequelize.STRING
       },
       createdAt: {

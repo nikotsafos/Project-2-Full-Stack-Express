@@ -1,4 +1,4 @@
-#Project-2-Full-Stack-Express
+# Project-2-Full-Stack-Express
 
 ## What it includes
 
@@ -21,6 +21,8 @@
 | email | String | - |
 | password | String | hashed with bcrypt |
 | dob | Date | - |
+| weight | INTEGER | - |
+| height | INTEGER | - |
 
 > NOTE: Change these fields in both the model and migration files BEFORE running
 sequelize db:migrate

@@ -2,11 +2,12 @@
   <div class="nav-wrapper #212121 grey darken-4">
     <a href="/" class="brand-logo">WOM</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="/">Home</a></li>
       <%if(currentUser){%>
-      <li><a href="/Profile">Profile</a></li>
+      <li><a href="/profile/addworkout">Add workout</a></li>
+      <li><a href="/profile">Profile</a></li>
       <li><a href="/auth/logout">Logout</a></li>
       <% } else {%>
+      <li><a href="/">Home</a></li>
       <li><a href="/auth/login">Login</a></li>
       <li><a href="/auth/signup">Signup</a></li>
       <%}%>
