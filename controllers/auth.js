@@ -14,7 +14,7 @@ router.get('/login', function(req, res){
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/profile',
+  successRedirect: '/',
   successFlash: 'yay, login success',
   failureRedirect: '/auth/login',
   failureFlash: 'Invalid credentials'
@@ -33,7 +33,7 @@ router.post('/signup', function(req, res){
     if(wasCreated){ // this is expected behavior
       // automatically log user in
       passport.authenticate('local', {
-        successRedirect: '/profile',
+        successRedirect: '/',
         successFlash: 'Successfully logged in',
         failureRedirect: '/',
         failureFlash: 'Oh no'
@@ -64,7 +64,7 @@ router.get('/facebook', passport.authenticate('facebook', {
 
 // Handle response/callback from facebook
 router.get('/callback/facebook', passport.authenticate('facebook', {
-  successRedirect: '/profile',
+  successRedirect: '/',
   successFlash: 'facebook login successful',
   failureRedirect: '/auth/login',
   failureFlash: 'FB fail'

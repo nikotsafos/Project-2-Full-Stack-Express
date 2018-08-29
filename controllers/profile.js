@@ -23,11 +23,7 @@ router.get('/edit', loggedIn, function(req, res){
 });
 
 router.post('profile', loggedIn, function(req, res){
-  db.workout.create({
-    where: {Exercise: req.body.name, Weight: req.body.weight, Sets: req.body.sets, Reps: req.body.reps},
-    defaults: req.body
-  })
-  res.render('profile');
+  res.render('workouts');
 });
 
 module.exports = router;

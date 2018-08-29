@@ -5,7 +5,8 @@
     <img src="<%=currentUser.image%>" class="responsive-img">
   </div>
   <div class="col s6">
-    <h4>Your info</h4><a href="/profile/edit"><button>Edit your info</button></a>
+    <h4>Your info</h4><a href="/profile/edit" class="waves-effect waves-light btn-small">
+      <i class="material-icons left">fitness_center</i><i class="material-icons right">send</i>Edit your info</a>
     <p>Name: <%=currentUser.firstname%> <%=currentUser.lastname%></p>
     <p>Email: <%=currentUser.email%></p>
     <p>Birthday: <%=moment(currentUser.dob).calendar()%></p>
