@@ -31,6 +31,7 @@ router.get('/edit', loggedIn, function(req, res){
 });
 
 
+
 router.put('/edit', loggedIn, function(req, res){
   res.send(req.body);
 });
