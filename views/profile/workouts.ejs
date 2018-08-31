@@ -1,4 +1,4 @@
-<h1>Here is a log of all your workouts</h1>
+<h1>Workout log</h1><a href="/profile/addworkout" class="waves-effect waves-light btn"><i class="material-icons left">fitness_center</i><i class="material-icons right">playlist_add</i>Log your workout</a>
 
 <% workouts.forEach(function(w){%>
   <%if(currentUser.id === w.userId){%>
@@ -6,9 +6,10 @@
 <div>
 
     <%=w.name%>
-    <%=w.liftedweight%>
-    <%=w.sets%>
-    <%=w.reps%>
+    <%=w.weight%>lbs
+    <%=w.sets%> Sets
+    <%=w.reps%> Reps
+    <%=moment(w.date).calendar()%>
 
 </div>
 <%};%>
