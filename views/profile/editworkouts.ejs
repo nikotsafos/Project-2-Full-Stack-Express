@@ -1,0 +1,22 @@
+<h2>Edit your workouts</h2>
+<form action="/profile/workouts" method="PUT">
+  <div class="row">
+    <div class="input-field col s12 m3">
+    <label for="exercise">Exercise</label>
+    <input type="text" id="exercise" name="exercise" class="validate">
+    </div>
+    <div class="input-field col s12 m3">
+    <label for="liftedweight">Weight(lb)</label>
+    <input type="number" id="liftedweight" name="liftedweight" class="validate">
+    </div>
+    <div class="input-field col s12 m3">
+    <label for="sets">Sets</label>
+    <input type="number" id="sets" name="sets" class="validate">
+    </div>
+    <div class="input-field col s12 m3">
+    <label for="reps">Reps</label>
+    <input type="number" id="reps" name="reps" class="validate">
+    </div>
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">
+  <i class="material-icons left">fitness_center</i><i class="material-icons right">send</i>Edit

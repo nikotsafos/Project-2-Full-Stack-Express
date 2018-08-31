@@ -1,17 +1,25 @@
 <h2>Edit info</h2>
-<form action="/profile" method="POST">
+<form action="/profile" method="PUT">
   <div class="row">
     <div class="input-field col s12 m3">
+    <i class="material-icons prefix">photo_camera</i>
     <label for="image">Picture Url</label>
-    <input type="url" id="image" name="image" class="validate" placeholder="<%=currentUser.image%>">
+    <input type="url" id="image" name="image" class="validate" value="<%=currentUser.image%>" placeholder="<%=currentUser.image%>">
     </div>
     <div class="input-field col s12 m3">
+    <i class="material-icons prefix">accessibility</i>
     <label for="weight">Weight(lb)</label>
-    <input type="number" id="weight" name="weight" class="validate" placeholder="<%=currentUser.weight%>">
+    <input type="number" id="weight" name="weight" class="validate" value="<%=currentUser.weight%>" placeholder="<%=currentUser.weight%>">
     </div>
     <div class="input-field col s12 m3">
+    <i class="material-icons prefix">unfold_more</i>
     <label for="height">Height(in)</label>
-    <input type="number" id="height" name="height" class="validate" placeholder="<%=currentUser.height%>">
+    <input type="number" id="height" name="height" class="validate" value="<%=currentUser.height%>" placeholder="<%=currentUser.height%>">
+    </div>
+    <div class="input-field col s12 m3">
+    <i class="material-icons prefix">cake</i>
+    <label for="dob">Birthday</label>
+    <input type="text" id="dob" name="dob" class="datepicker validate" value="<%=moment(currentUser.dob).calendar()%>" placeholder="<%=moment(currentUser.dob).calendar()%>">
     </div>
   </div>
   <button class="btn waves-effect waves-light" type="submit" name="action">

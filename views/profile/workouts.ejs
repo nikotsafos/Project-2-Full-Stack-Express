@@ -1,1 +1,15 @@
 <h1>Here is a log of all your workouts</h1>
+
+<% workouts.forEach(function(w){%>
+  <%if(currentUser.id === w.userId){%>
+  <hr>
+<div>
+
+    <%=w.name%>
+    <%=w.liftedweight%>
+    <%=w.sets%>
+    <%=w.reps%>
+
+</div>
+<%};%>
+<%});%>

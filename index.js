@@ -29,6 +29,7 @@ app.use(passport.session());
 // Custom middleware -- fun
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
+  res.locals.currentUserId = req.id;
   res.locals.alerts = req.flash();
   res.locals.moment = moment;
   next();

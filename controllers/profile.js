@@ -10,6 +10,7 @@ var db = require('../models');
 var loggedIn = require('../middleware/loggedIn')
 
 // Define routes
+//
 router.get('/', loggedIn, function(req, res){
   res.render('profile/index');
 });
@@ -22,8 +23,21 @@ router.get('/edit', loggedIn, function(req, res){
   res.render('profile/edit');
 });
 
-router.post('profile', loggedIn, function(req, res){
-  res.render('workouts');
+router.put('/profile/edit', loggedIn, function(req, res){
+  res.send(req.body);
 });
+
+router.post('profile/workouts', loggedIn, function(req, res){
+  res.render('profile/workouts');
+});
+
+router.get('/workouts', loggedIn, function(req, res){
+  db.workout.findAll().then(function(allWorkouts){
+  res.render('profile/workouts', {workouts: allWorkouts});
+}).catch(function(err){
+  res.render('error')
+})
+});
+
 
 module.exports = router;
