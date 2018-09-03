@@ -2,18 +2,18 @@
 $(document).ready(function(){
   console.log('ajax is running and doc is loaded');
 
-  // $('.delete-btn').click(function(e){
-  //   e.preventDefault();
-  //   var url = $(this).attr('href');
-  //
-  //   $.ajax({
-  //     url: url,
-  //     method: 'DELETE'
-  //   }).done(function(res){
-  //     window.location = '/' + url.split('/')[1];
-  //   }).fail(function(err){
-  //   });
-  // });
+  $('.delete-btn').click(function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+
+    $.ajax({
+      url: url,
+      method: 'DELETE'
+    }).done(function(res){
+      window.location = '/' + url.split('/')[1];
+    }).fail(function(err){
+    });
+  });
 
   $('.edit').submit(function(e){
     e.preventDefault();

@@ -8,6 +8,7 @@ var express = require('express');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
 var flash = require('connect-flash');
+var request = require('request');
 var moment = require('moment');
 
 // declare app variable
@@ -43,8 +44,17 @@ app.use('/profile', require('./controllers/profile'));
 
 
 // define routes
-app.get('/', function(req, res){
-  res.render('home');
+// app.get('/', function(req, res){
+//   res.render('home');
+// });
+
+app.get('/', function(req, res) {
+  var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=199&language=2&status=2';
+  // Use request to call the API
+  request(exerciseUrl, function(error, response, body) {
+    var exercise = JSON.parse(body).results;
+    res.render('home', { exercise: exercise });
+  });
 });
 
 // listen on port 3000

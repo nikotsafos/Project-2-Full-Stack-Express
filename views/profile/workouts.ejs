@@ -2,7 +2,7 @@
 
 <% workouts.forEach(function(w){%>
   <%if(currentUser.id === w.userId){%>
-  <hr>
+  <br><hr><br>
 <div>
 
     <%=w.name%>
@@ -10,6 +10,12 @@
     <%=w.sets%> Sets
     <%=w.reps%> Reps
     <%=moment(w.date).calendar()%>
+    <span>
+    <a href="/workouts" class="waves-effect waves-light btn delete-btn #d50000 red accent-4 right"><i class="material-icons left">fitness_center</i><i class="material-icons right">playlist_add</i>DELETE</a>
+  </span>
+  <span>
+    <a href="/profile/editworkouts" class="waves-effect waves-light btn right"><i class="material-icons left">fitness_center</i><i class="material-icons right">playlist_add</i>Edit</a>
+</span>
 
 </div>
 <%};%>

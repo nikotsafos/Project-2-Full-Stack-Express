@@ -21,15 +21,36 @@ router.get('/addworkout', loggedIn, function(req, res){
   res.render('profile/addworkout');
 });
 
+// router.get('/edit', loggedIn, function(req, res){
+//   console.log("yowhat!!__------", req.body)
+//   db.user.findById(req.params.id).then(function(foundUser){
+//     res.render('profile/edit', {user: foundUser});
+//   }).catch(function(err){
+//     res.render('error');
+//   })
+// });
+
 router.get('/edit', loggedIn, function(req, res){
-  console.log("yowhat!!__------", req.body)
-  db.user.findById(req.params.id).then(function(foundUser){
-    res.render('profile/edit', {user: foundUser});
-  }).catch(function(err){
-    res.render('error');
-  })
+  db.user.update({
+    image: req.image,
+    weight: req.weight,
+    height: req.height,
+    dob: req.dob
+  }).then(function(user){
+    res.render('profile');
+})
+
 });
 
+// db.user.update({
+//   lastName: 'Taco'
+// }, {
+//   where: {
+//     firstName: 'Brian'
+//   }
+// }).then(function(user) {
+//   // do something when done updating
+// });
 
 
 router.put('/edit', loggedIn, function(req, res){
@@ -55,6 +76,25 @@ router.get('/workouts', loggedIn, function(req, res){
   res.render('error')
 })
 });
+
+router.get('/editworkouts', loggedIn, function(req, res){
+  res.render('profile/editworkouts');
+});
+
+
+// router.get('/', function(req, res) {
+//   var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=199&language=2&status=2';
+//   // Use request to call the API
+//   request(exerciseUrl, function(error, response, body) {
+//
+//     var exercise = JSON.parse(body).name;
+//     res.render('home', { exercise: body });
+//   });
+// });
+
+
+
+
 
 // router.delete()
 
