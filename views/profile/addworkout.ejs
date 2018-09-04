@@ -20,6 +20,10 @@
     <label for="reps">Reps</label>
     <input type="number" id="reps" name="reps" class="validate" required>
     </div>
+    <label for="userId"></label>
+    <input type="hidden" id="crntuser" name="userId" value="<%=currentUser.id%>">
+    <label for="date"></label>
+    <input type="hidden" id="date" name="date" value="<%=new Date()%>">
   </div>
   <button class="btn waves-effect waves-light" type="submit">
   <i class="material-icons left">fitness_center</i><i class="material-icons right">send</i>Submit
