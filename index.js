@@ -31,7 +31,6 @@ app.use(passport.session());
 // Custom middleware -- fun
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
-  res.locals.currentWorkout = req.workout;
   res.locals.alerts = req.flash();
   res.locals.moment = moment;
   next();
@@ -55,6 +54,10 @@ app.get('/', function(req, res) {
     var exercise = JSON.parse(body).results;
     res.render('home', { exercise: exercise });
   });
+});
+
+app.get('*', function(req, res){
+  res.render('error');
 });
 
 // listen on port 3000

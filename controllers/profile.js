@@ -30,12 +30,20 @@ router.get('/addworkout', loggedIn, function(req, res){
 //   })
 // });
 
-router.get('/edit', loggedIn, function(req, res){
+router.get('/profile/:id', loggedIn, function(req, res){
+  res.render('profile/edit');
+});
+
+
+router.put('/profile/:id', loggedIn, function(req, res){
+  console.log('BODY', req.body);
+  console.log('PARAMS.ID', req.params.id);
   db.user.update({
-    image: req.image,
-    weight: req.weight,
-    height: req.height,
-    dob: req.dob
+    body: req.body
+  }, {
+    where: {
+      id: req.params.id
+    }
   }).then(function(user){
     res.render('profile');
 })
@@ -52,10 +60,20 @@ router.get('/edit', loggedIn, function(req, res){
 //   // do something when done updating
 // });
 
+// db.user.update({
+//   lastName: 'Taco'
+// }, {
+//   where: {
+//     firstName: 'Brian'
+//   }
+// }).then(function(user) {
+//   // do something when done updating
+// });
 
-router.put('/edit', loggedIn, function(req, res){
-  res.send(req.body);
-});
+
+// router.put]('/edit', loggedIn, function(req, res){
+//   res.send(req.body);
+// });
 
 router.post('/workouts', loggedIn, function(req, res){
   console.log("!!!!!!!!!!!>>>>>>>", req.body)
@@ -67,6 +85,7 @@ router.post('/workouts', loggedIn, function(req, res){
   });
 });
 });
+
 
 
 router.get('/workouts', loggedIn, function(req, res){
@@ -82,21 +101,39 @@ router.get('/editworkouts', loggedIn, function(req, res){
 });
 
 
-// router.get('/', function(req, res) {
-//   var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=199&language=2&status=2';
-//   // Use request to call the API
-//   request(exerciseUrl, function(error, response, body) {
-//
-//     var exercise = JSON.parse(body).name;
-//     res.render('home', { exercise: body });
-//   });
-// });
-
-
-
-
 
 // router.delete()
+// router.post('/workouts', function(req, res){
+//   db.workout.destroy({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function() {
+//     res.render('/workouts');
+//   })
+//
+// });
+
+router.get('workouts/:id', function(req, res){
+  db.workout.findById(req.params.id).then(function(foundWorkout){
+    res.send(foundWorkout);
+  }).catch(function(err){
+    console.log('err', err);
+    res.render('404');
+  });
+});
+
+router.delete('/workouts/:id', function(req, res){
+  db.workout.destroy({
+    where: { id: req.params.id }
+  }).then(function(recentlyDestroyed){
+    console.log('deleted:', recentlyDestroyed);
+    res.send('succesfully deleted');
+  }).catch(function(err){
+    console.log('err', err);
+    res.send('sad fail');
+  });
+});
 
 
 module.exports = router;

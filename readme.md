@@ -1,13 +1,5 @@
-# Project-2-Full-Stack-Express
-
-## What it includes
-
-* Sequelize models and migration for user model
-* Settings for Postgresql
-* Passport and Passport-Local for authentication
-* Express sessions to keep user logged in from page to page
-* Connect-Flash for error/success messages
-* Bcrypt for hashing passwords
+# Workout Manager
+Full Stack App built using Node, Express, Sequelize and Postgresql
 
 ### User model
 
@@ -24,10 +16,7 @@
 | weight | INTEGER | - |
 | height | INTEGER | - |
 
-> NOTE: Change these fields in both the model and migration files BEFORE running
-sequelize db:migrate
-
-### Default Routes Supplied
+### Auth Routes
 
 | Method | Path | Location | Purpose |
 | ------ | ----------------- | ----------------------------- | ------------------------------------------ |

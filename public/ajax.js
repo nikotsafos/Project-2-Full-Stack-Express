@@ -7,10 +7,11 @@ $(document).ready(function(){
     var url = $(this).attr('href');
 
     $.ajax({
-      url: url,
-      method: 'DELETE'
+      method: 'DELETE',
+      url: url
+
     }).done(function(res){
-      window.location = '/' + url.split('/')[1];
+      window.location = '/workouts';
     }).fail(function(err){
     });
   });
