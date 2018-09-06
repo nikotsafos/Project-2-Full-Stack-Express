@@ -31,6 +31,7 @@ app.use(passport.session());
 // Custom middleware -- fun
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
+  res.locals.currentWorkout = req.workout;
   res.locals.alerts = req.flash();
   res.locals.moment = moment;
   next();
@@ -39,6 +40,7 @@ app.use(function(req, res, next){
 // Include controllers
 app.use('/auth', require('./controllers/auth'));
 app.use('/profile', require('./controllers/profile'));
+app.use('/workout', require('./controllers/workout'));
 
 
 
@@ -56,9 +58,9 @@ app.get('/', function(req, res) {
   });
 });
 
-app.get('*', function(req, res){
-  res.render('error');
-});
+// app.get('*', function(req, res){
+//   res.render('error');
+// });
 
 // listen on port 3000
 app.listen(process.env.PORT || 3000);

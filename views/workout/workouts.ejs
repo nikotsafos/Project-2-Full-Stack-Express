@@ -1,0 +1,24 @@
+<h1>Workout log</h1><a href="/workout/add" class="waves-effect waves-light btn"><i class="material-icons left">fitness_center</i><i class="material-icons right">playlist_add</i>Log your workout</a>
+
+<% workouts.forEach(function(w){%>
+  <%if(currentUser.id === w.userId){%>
+  <br><hr><br>
+<div>
+
+    <%=w.name%>
+    <%=w.weight%>lbs
+    <%=w.sets%> Sets
+    <%=w.reps%> Reps
+    <%=moment(w.date).calendar()%>
+
+    <span>
+
+    <a href="/workout/workouts" class="waves-effect waves-light btn delete-btn #d50000 red accent-4 right"><i class="material-icons left">fitness_center</i><i class="material-icons right">playlist_add</i>DELETE</a>
+  </span>
+  <span>
+    <a href="/workout/edit/<%=w.id%>" class="waves-effect waves-light btn right"><i class="material-icons left">fitness_center</i><i class="material-icons right">playlist_add</i>Edit</a>
+</span>
+
+</div>
+<%};%>
+<%});%>
