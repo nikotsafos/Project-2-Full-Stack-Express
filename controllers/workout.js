@@ -93,5 +93,12 @@ router.put('/edit/:id', loggedIn, function(req, res){
 //     res.send('sad fail');
 //   });
 // });
+router.delete('/workouts/:id', loggedIn, function(req, res){
+  db.workout.destroy({
+  where: { id: req.params.id }
+}).then(function() {
+  res.send('/workout/workouts');
+  })
+});
 
 module.exports = router;

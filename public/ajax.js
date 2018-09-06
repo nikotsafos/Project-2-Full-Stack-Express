@@ -11,7 +11,7 @@ $(document).ready(function(){
       url: url
 
     }).done(function(res){
-      window.location = '/workouts';
+      window.location = '/workout/workouts';
     }).fail(function(err){
     });
   });
