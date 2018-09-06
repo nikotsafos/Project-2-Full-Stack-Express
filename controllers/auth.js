@@ -55,19 +55,4 @@ router.get('/logout', function(req, res){
   res.redirect('/')
 })
 
-// OAUTH Routes
-// This calls the passport-facebook strategy (located in passport config)
-
-router.get('/facebook', passport.authenticate('facebook', {
-  scope: ['public_profile', 'email']
-}));
-
-// Handle response/callback from facebook
-router.get('/callback/facebook', passport.authenticate('facebook', {
-  successRedirect: '/',
-  successFlash: 'facebook login successful',
-  failureRedirect: '/auth/login',
-  failureFlash: 'FB fail'
-}));
-
 module.exports = router;

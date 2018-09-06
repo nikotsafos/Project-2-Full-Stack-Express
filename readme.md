@@ -16,11 +16,24 @@ Full Stack App built using Node, Express, Sequelize and Postgresql
 | weight | INTEGER | - |
 | height | INTEGER | - |
 
+### Workout model
+
+| Column Name | SQL Type | Notes |
+| ----------- | -------- | ------------------------------- |
+| id | integer | serial primary key |
+| createdAt | Date | automatically generated |
+| updatedAt | Date | automatically generated |
+| name | String | - |
+| reps | INTEGER | - |
+| sets | INTEGER | - |
+| date | Date | same as updatedAt |
+| weight | INTEGER | - |
+| userId | INTEGER | tied with id from user model |
+
 ### Auth Routes
 
 | Method | Path | Location | Purpose |
 | ------ | ----------------- | ----------------------------- | ------------------------------------------ |
-| GET | / | index.js | Home page |
 | GET | /profile | controllers/profile.js | Profile page (authorization req) |
 | GET | /auth/login | controllers/auth.js | Login form page |
 | POST | /auth/login | controllers/auth.js | Login submission + Redirect to Profile |

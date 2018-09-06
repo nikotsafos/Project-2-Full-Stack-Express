@@ -32,10 +32,6 @@ router.post('/workouts', loggedIn, function(req, res){
 });
 });
 
-
-
-
-
 router.get('/edit/:id', loggedIn, function(req, res){
   db.workout.findById(req.params.id).then(function(foundWorkout){
     res.render('workout/edit', {workout: foundWorkout});
@@ -59,40 +55,6 @@ router.put('/edit/:id', loggedIn, function(req, res){
 });
 
 
-
-// router.delete()
-// router.post('/workouts', function(req, res){
-//   db.workout.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function() {
-//     res.render('/workouts');
-//   })
-//
-// });
-
-// router.get('/workouts/:id', function(req, res){
-//   db.workout.findById(req.params.id).then(function(foundWorkout){
-//     res.send(foundWorkout);
-//   }).catch(function(err){
-//     console.log('err', err);
-//     res.render('404');
-//   });
-// });
-
-// router.delete('/workouts/:id', function(req, res){
-//   console.log('delete data', req.params.id)
-//   db.workout.destroy({
-//     where: { id: req.params.id }
-//   }).then(function(recentlyDestroyed){
-//     console.log('deleted:', recentlyDestroyed);
-//     res.send('succesfully deleted');
-//   }).catch(function(err){
-//     console.log('err', err);
-//     res.send('sad fail');
-//   });
-// });
 router.delete('/workouts/:id', loggedIn, function(req, res){
   db.workout.destroy({
   where: { id: req.params.id }

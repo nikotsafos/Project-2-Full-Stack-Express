@@ -44,11 +44,6 @@ app.use('/workout', require('./controllers/workout'));
 
 
 
-// define routes
-// app.get('/', function(req, res){
-//   res.render('home');
-// });
-
 app.get('/', function(req, res) {
   var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=199&language=2&status=2';
   // Use request to call the API
@@ -58,9 +53,9 @@ app.get('/', function(req, res) {
   });
 });
 
-// app.get('*', function(req, res){
-//   res.render('error');
-// });
+app.get('*', function(req, res){
+  res.render('error');
+});
 
 // listen on port 3000
 app.listen(process.env.PORT || 3000);
