@@ -1,9 +1,9 @@
 <h2>Edit your workouts</h2>
-<form class="edit" action="/workout/workouts" method="PUT">
+<form class="edit" action="/workout/edit/<%=workout.id%>" method="PUT">
   <div class="row">
     <div class="input-field col s12 m3">
-    <label for="exercise">Exercise</label>
-    <input type="text" id="exercise" name="exercise" class="validate" value="<%=workout.name%>" placeholder="<%=workout.name%>">
+    <label for="name">Exercise</label>
+    <input type="text" id="exercise" name="name" class="validate" value="<%=workout.name%>" placeholder="<%=workout.name%>">
     </div>
     <div class="input-field col s12 m3">
     <label for="liftedweight">Weight(lb)</label>

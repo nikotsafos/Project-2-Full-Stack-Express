@@ -43,6 +43,21 @@ router.get('/edit/:id', loggedIn, function(req, res){
 
 });
 
+router.put('/edit/:id', loggedIn, function(req, res){
+  db.workout.update({
+    name: req.body.name,
+    weight: req.body.liftedweight,
+    sets: req.body.sets,
+    reps: req.body.reps
+  }, {
+    where: {
+      id: req.params.id
+      }
+  }).then(function(user){
+    res.send('/workout/workouts');
+  })
+});
+
 
 
 // router.delete()
