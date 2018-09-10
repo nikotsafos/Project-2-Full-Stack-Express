@@ -12,7 +12,6 @@ var loggedIn = require('../middleware/loggedIn')
 // Define routes
 
 router.get('/', loggedIn, function(req, res){
-  console.log('rendering profile');
   res.render('profile/index');
 });
 

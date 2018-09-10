@@ -22,7 +22,6 @@ router.get('/add', loggedIn, function(req, res){
 });
 
 router.post('/workouts', loggedIn, function(req, res){
-  console.log("!!!!!!!!!!!>>>>>>>", req.body)
   db.workout.create(req.body).then(function(createdWorkout){
     db.workout.findAll().then(function(allWorkouts){
     res.render('workout/workouts', {workouts: allWorkouts});
