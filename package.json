@@ -1,8 +1,8 @@
 {
-  "name": "Project-2-Full-Stack-Express",
+  "name": "Work-out-manager",
   "version": "1.0.0",
   "description": "workout",
-  "repository": "https://github.com/nikotsafos/Project-2-Full-Stack-Express.git",
+  "repository": "https://git@github.com:nikotsafos/work-out-manager.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
