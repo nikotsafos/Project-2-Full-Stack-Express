@@ -44,14 +44,14 @@ app.use('/workout', require('./controllers/workout'));
 
 
 
-app.get('/', function(req, res) {
-  var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=199&language=2&status=2';
-  // Use request to call the API
-  request(exerciseUrl, function(error, response, body) {
-    var exercise = JSON.parse(body).results;
-    res.render('home', { exercise: exercise });
-  });
-});
+// app.get('/', function(req, res) {
+//   var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=199&language=2&status=2';
+//   // Use request to call the API
+//   request(exerciseUrl, function(error, response, body) {
+//     var exercise = JSON.parse(body).results;
+//     res.render('home', { exercise: exercise });
+//   });
+// });
 
 app.get('*', function(req, res){
   res.render('error');
